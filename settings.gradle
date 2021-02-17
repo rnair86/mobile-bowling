@@ -1,0 +1,3 @@
+include ':bowlinggame-shared'
+include ':app'
+rootProject.name = "BowlingGame"
