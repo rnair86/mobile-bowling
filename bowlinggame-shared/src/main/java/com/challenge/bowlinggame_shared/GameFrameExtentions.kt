@@ -27,5 +27,37 @@ internal class GameFrameExtentions {
                 }
             }
         }
+        fun GameFrame.getRollsRemaining():Int{
+
+            return if(this.rolls.size>0){
+                if(this.number==10){
+                    if(this.isStrike||this.isSpare){
+                        3-rolls.size
+                    }else{
+                        2-rolls.size
+                    }
+                }else{
+                    2-rolls.size
+                }
+            }else{
+                2
+            }
+
+        }
+        fun GameFrame.hascompleted():Boolean{
+            if(this.sumTotal>0){
+                return true
+            }
+            return false
+        }
+        fun GameFrame.getPinsRemaing():Int{
+            val bonusTotalpins=20
+            if(this.number==10 && (this.isSpare||this.isStrike)){
+                return bonusTotalpins-this.sumOfRolls
+            }
+            return TOTALPINS - this.sumOfRolls
+        }
+
+
     }
 }
