@@ -95,6 +95,16 @@ class LinkedList<T> {
         }
     }
 
+    fun toList():List<T>{
+        val mutableList= mutableListOf<T>()
+        var node = headNode
+        while (node!=null){
+            mutableList.add(node.value)
+            node=node.nextNode
+        }
+        return mutableList.toList()
+    }
+
 
     override fun toString(): String {
         var s = "["

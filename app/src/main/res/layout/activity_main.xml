@@ -1,18 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+    <!-- Top Half -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        tools:ignore="Suspicious0dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="0dp"
+            android:id="@+id/game_list_view"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            tools:ignore="Suspicious0dp">
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="New Game"
+                    android:id="@+id/btnNewGame">
+
+                </Button>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <!-- Bottom Half -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        tools:ignore="Suspicious0dp">
+
+        <!-- Score Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            tools:ignore="Suspicious0dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Score"
+                android:layout_weight="1"
+                android:id="@+id/lblScore"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:layout_weight="1"
+                android:id="@+id/txtScore"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                android:textAlignment="textEnd"
+                android:padding="10dp"
+                android:gravity="center"
+                tools:ignore="RtlCompat" />
+
+        </LinearLayout>
+
+        <!-- Current Frame Info Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            tools:ignore="Suspicious0dp">
+
+            <!-- Frame No -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:ignore="Suspicious0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:id="@+id/lblFrameno"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="Frame No"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:textSize="50dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:id="@+id/txtFrameno"
+                    android:text="1"/>
+
+
+            </LinearLayout>
+
+            <!-- Turns Left -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:ignore="Suspicious0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:id="@+id/lblTurnsLeft"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="Turns Left"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:textSize="50dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:id="@+id/txtTurnsLeft"
+                    android:text="1"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Roll Entry Section -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            tools:ignore="Suspicious0dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtRoll"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                app:errorEnabled="true"
+                android:padding="10dp"
+                android:hint="Enter Roll"
+                app:expandedHintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="35dp"
+                    android:text=""
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnsend"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+
+                android:padding="10dp"
+                android:text="SendRoll"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
