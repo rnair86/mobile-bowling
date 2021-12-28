@@ -26,24 +26,3 @@ Input: Strike, 7, Spare, 9, Miss, Strike, Miss, 8, 8, Spare, Miss, 6, Strike, St
 * Spare - Score of 10, plus the total number of pins knocked down on the next roll only
 * Each frame displays the cumulative score up to that point for all complete frames. If a frame has a strike or spare, the score for that frame is not displayed until sufficient subsequent rolls have been input
 
-## Milestones
-
-### Milestone 1 - Data Model
-A fully implemented and tested data model for the above.
-Should include well-encapsulated interfaces for all classes, properties, and methods of model layer.
-
-### Milestone 2 - Business Logic
-Implementation of the "business logic", which includes maintaining the state of a game in progress, keeping track of the current frame, calculating the score, and the logic to step through the game.
-The functionality can be demonstrated with hard-coded data or use a basic interface to allow rolls to be entered.
-
-### Milestone 3 - Mobile App Implementation
-Implement views and screens, using any architecture desired.
-Should be a fully working app, with an interface to enter in scores and a live updating scoreboard that correctly tells you what the current score is, what frame you are in, and how many rolls remain in the current frame.
-The game does not have to be stored between runs of the app or saved in any way.
-
-## What we're looking for
-
-Here are some things we will be looking for when assessing your implementation
-1) Your code compiles
-2) Your score calculation is able to handle a variety of games
-3) Your code has 80% test coverage
